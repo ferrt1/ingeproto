@@ -10,6 +10,8 @@
       src="https://kit.fontawesome.com/6616501bac.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="dist/css/leaflet-container.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script>
       tailwind.config = {
         theme: {
@@ -24,78 +26,80 @@
         },
       };
     </script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
-  <body class="font-sans bg-gray-100">
-
-    <!-- Header -->
-    <header class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-2 top-0 sticky z-50">
-        <div class="flex relative font-bold">
-            <a href="/" id="home-link"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-house-fill inline-block " viewBox="0 0 16 16">
-                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
-            </svg> Secretaria de Turismo </a>
-        </div>
-        <ul id="menu" class="fixed hidden bg-white w-[100%] h-full font-bold flex-1 flex flex-col items-center justify-center gap-10 z-50 md:flex md:w-full md:h-full md:flex-row md:gap-0 md:static md:items-center md:justify-end md:[&>li>a]:px-3.5 md:[&>li>a]:font-medium">
-            <li><a href="/productos">Productos</a></li>
-            <li><a href="/carrito">Carrito</a></li>
-            <li><a href="/cuenta">Mi Cuenta</a></li>
-        </ul>
-        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list items-center w-11 h-full inline-block cursor-pointer md:hidden transition-all dutarion-500 z-50"  viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-        </svg>
+  <body>
+    <header
+      class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50"
+    >
+      <div class="flex relative font-bold">
+        <a href="/" id="home-link"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            fill="currentColor"
+            class="bi bi-house-fill inline-block"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+            />
+            <path
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+            />
+          </svg>
+          Secretaria de Turismo</a
+        >
+      </div>
+      <ul
+        id="menu"
+        class="fixed hidden bg-white w-[100%] h-full font-bold flex-1 flex flex-col items-center justify-center gap-10 z-50 md:flex md:w-full md:h-full md:flex-row md:gap-0 md:static md:items-center md:justify-end md:[&>li>a]:px-3.5 md:[&>li>a]:font-medium"
+      >
+        <li><a href="/html/centers.html">Centros de atención</a></li>
+        <li><a href="/html/commerce.html">Comercios</a></li>
+        <li><a href="">Iniciar sesión</a></li>
+      </ul>
+      <svg
+        id="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-list items-center w-11 h-full inline-block cursor-pointer md:hidden transition-all dutarion-500 z-50"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
     </header>
-
-    <!-- Contenido principal -->
-    <main class="container mx-auto mt-8 p-4">
-
-        <!-- Productos -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <!-- Ejemplo de producto -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="https://placehold.it/200x200" alt="Producto" class="w-full h-32 object-cover mb-4 rounded-md">
-                <h3 class="text-lg font-semibold text-gray-800">Nombre del Producto</h3>
-                <p class="text-gray-500 mt-2">Descripción corta del producto.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-gray-800 font-bold">$99.99</span>
-                    <button class="bg-primary text-white px-4 py-2 rounded-md">Agregar al Carrito</button>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="https://placehold.it/200x200" alt="Producto" class="w-full h-32 object-cover mb-4 rounded-md">
-                <h3 class="text-lg font-semibold text-gray-800">Nombre del Producto</h3>
-                <p class="text-gray-500 mt-2">Descripción corta del producto.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-gray-800 font-bold">$99.99</span>
-                    <button class="bg-primary text-white px-4 py-2 rounded-md">Agregar al Carrito</button>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="https://placehold.it/200x200" alt="Producto" class="w-full h-32 object-cover mb-4 rounded-md">
-                <h3 class="text-lg font-semibold text-gray-800">Nombre del Producto</h3>
-                <p class="text-gray-500 mt-2">Descripción corta del producto.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-gray-800 font-bold">$99.99</span>
-                    <button class="bg-primary text-white px-4 py-2 rounded-md">Agregar al Carrito</button>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="https://placehold.it/200x200" alt="Producto" class="w-full h-32 object-cover mb-4 rounded-md">
-                <h3 class="text-lg font-semibold text-gray-800">Nombre del Producto</h3>
-                <p class="text-gray-500 mt-2">Descripción corta del producto.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-gray-800 font-bold">$99.99</span>
-                    <button class="bg-primary text-white px-4 py-2 rounded-md">Agregar al Carrito</button>
-                </div>
-            </div>
-            <!-- Repite este bloque para más productos -->
-        </section>
-
+    <main>
+      <div class="md:ml-12">
+        <h2 class="font-bold text-[18px] mb-5 mx-12">Productos y Servicios</h2>
+        <div class="mb-4 mx-6">
+          <label for="searchInput" class="sr-only">Buscar productos</label>
+          <input
+            type="text"
+            id="searchInput"
+            class="border p-2 mx-5 w-[25%]"
+            placeholder="Buscar productos..."
+          />
+        </div>
+        <button
+          id="searchButton"
+          class="bg-primary text-white p-2 rounded mx-12"
+        >
+          Buscar
+        </button>
+        <div class="lg:flex lg:justify-between md:gap-4 mb-12 h-full p-8">
+          <div id="productList" class="mt-4 grid grid-cols-1 gap-4"></div>
+          <div id="map" class="mt-7 flex h-[60vh] lg:w-[50%] rounded-xl"></div>
+        </div>
+      </div>
     </main>
-
-    <!-- Footer (puedes agregar más contenido aquí) -->
-    <footer class="bg-gray-200 p-4 text-center">
-        <p class="text-gray-600">© 2023 Tu eCommerce. Todos los derechos reservados.</p>
-    </footer>
-
-</body>
+    <script src="/js/commerce.js"></script>
+    <script src="/js/header.js"></script>
+  </body>
 </html>
