@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secretaria de Turismo</title>
+    <link rel="icon" href="imgs/icons/icon-page.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/6616501bac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00759c",
+              secondary: "#004f69",
+              semiBlack: "#011627",
+              lightBlue: "#7dd3fc",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white">
+    <header
+      class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50"
+    >
+      <div class="flex relative font-bold">
+        <a href="/" id="home-link"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            fill="currentColor"
+            class="bi bi-house-fill inline-block"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+            />
+            <path
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+            />
+          </svg>
+          Secretaria de Turismo</a
+        >
+      </div>
+      <ul
+        id="menu"
+        class="fixed hidden bg-white w-[100%] h-full font-bold flex-1 flex flex-col items-center justify-center gap-10 z-50 md:flex md:w-full md:h-full md:flex-row md:gap-0 md:static md:items-center md:justify-end md:[&>li>a]:px-3.5 md:[&>li>a]:font-medium"
+      >
+        <li><a href="/html/centers.html">Centros de atención</a></li>
+        <li><a href="/html/commerce.html">Comercios</a></li>
+        <li><a href="">Iniciar sesión</a></li>
+      </ul>
+      <svg
+        id="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-list items-center w-11 h-full inline-block cursor-pointer md:hidden transition-all dutarion-500 z-50"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
+    </header>
+    <!--Main-->
+    <main class="px-6 py-2 mb-12">
+      <!--Banner-->
+      <section class="text-center mb-10 bg-black">
+        <h1 class="text-5xl font-bold text-primary mb-4">Circuito Chico</h1>
+        <img
+          class="max-h-[50vh] w-full object-cover rounded-xl"
+          src="imgs/atractivos/Circuito Chico/Banner3.jpg"
+          alt="Banner Image"
+        />
+        <p class="text-lg font-bold text-orange-500 mb-5 md:text-xl mt-6">
+          Este es un recorrido escénico que ofrece vistas panorámicas
+          espectaculares de los alrededores de Bariloche. Incluye puntos de
+          interés como el mirador del Lago Moreno, el Hotel Llao Llao, y la
+          Capilla San Eduardo, entre otros. Este circuito es ideal para aquellos
+          que desean explorar la belleza de los lagos y montañas que rodean la
+          ciudad.
+        </p>
+      </section>
+
+      <!-- Atractivo 1 -->
+      <section class="md:mb-4 lg:w-[1600px] mb-4">
+        <img
+          class="max-h-[30vh] w-full object-cover mx-auto rounded-xl"
+          src="./imgs/atractivos/Circuito Chico/MiradorLagoMorano2.jpg"
+          alt="MiradorLagoMoreno1"
+        />
+        <div class="md:flex md:mb-4">
+          <div class="flex-1 py-6">
+            <h2 class="text-2xl font-bold md:text-3xl leading-tight mb-2">
+              Mirador del Lago Moreno
+            </h2>
+            <p class="text-sm mb-4 md:text-base">
+              En el inicio del Circuito Chico, encontrarás el Mirador del Lago
+              Moreno. Desde este punto, puedes disfrutar de una vista panorámica
+              impresionante del Lago Moreno y sus alrededores. Es un lugar
+              perfecto para tomar fotografías y apreciar la serenidad del
+              paisaje.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atractivo 2 -->
+      <section class="md:mb-4 lg:w-[1600px] mb-4">
+        <img
+          class="max-h-[30vh] w-full object-cover mx-auto rounded-xl"
+          src="./imgs/atractivos/Circuito Chico/Hotelllaollao.jpg"
+          alt="Hotelllaollao"
+        />
+        <div class="md:flex md:mb-4">
+          <div class="flex-1 py-6">
+            <h2 class="text-2xl font-bold md:text-3xl leading-tight mb-2">
+              Hotel Llao Llao
+            </h2>
+            <p class="text-sm mb-4 md:text-base">
+              Este icónico hotel se encuentra a orillas del Lago Nahuel Huapi y
+              es una obra maestra arquitectónica. Construido con piedra y
+              madera, el Hotel Llao Llao ofrece no solo alojamiento de lujo,
+              sino también un entorno natural espectacular. Puedes dar un paseo
+              por los jardines del hotel y disfrutar de la vista del lago y las
+              montañas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atractivo 3 -->
+      <section class="md:mb-4 lg:w-[1600px] mb-4">
+        <img
+          class="max-h-[50vh] max-w-[30vw] object- mx-auto object-center rounded-xl"
+          src="imgs/atractivos/Circuito Chico/CapillaEduardo.jpg"
+          alt="CapillaEduardo"
+        />
+        <div class="md:flex md:mb-4">
+          <div class="flex-1 py-6">
+            <h2 class="text-2xl font-bold md:text-3xl leading-tight mb-2">
+              Capilla San Eduardo
+            </h2>
+            <p class="text-sm mb-4 md:text-base">
+              También conocida como la Capilla San Eduardo, esta pequeña iglesia
+              de madera se encuentra en el Circuito Chico y ofrece un encanto
+              pintoresco. La Capilla San Eduardo fue construida en la década de
+              1930 y tiene un entorno tranquilo con vistas al Lago Nahuel Huapi.
+              Es un lugar pintoresco para visitar y apreciar la arquitectura
+              tradicional de la región.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Añadir más secciones para otros atractivos según sea necesario -->
+    </main>
+
+    <script src="js/header.js"></script>
+  </body>
+</html>
