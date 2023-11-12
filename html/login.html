@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Secretaria de Turismo</title>
+        <link rel="icon" href="imgs/icons/icon-page.png" type="image/png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/6616501bac.js" crossorigin="anonymous"></script>
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  primary: "#00759c",
+                  secondary: "#004f69",
+                  semiBlack: "#011627",
+                  lightBlue: "#7dd3fc",
+                },
+              },
+            },
+          };
+        </script>
+      </head>
+      <body class="font-sans bg-secondary h-[100vh]">
+        <div class="p-8 lg:w-1/2 mx-auto">
+
+            <div class="bg-gray-100 rounded-b-lg py-12 px-4 lg:px-24">
+                <p class="text-center text-sm text-gray-500 font-light">
+                    Inicie sesión a continuación:
+                </p>
+                <form class="mt-6">
+                    <div class="relative mt-3">
+                        <input
+                            class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                            id="loginusername"
+                            type="text"
+                            placeholder="Nombre de usuario o email"
+                        />
+                        <div class="absolute p-4 inset-y-0 flex items-center text-gray-600">
+                            <!-- Icono AiOutlineMail aquí -->
+                        </div>
+                    </div>
+                    <div class="relative mt-3">
+                        <input
+                            class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                            id="loginpassword"
+                            type="password"
+                            placeholder="Contraseña"
+                        />
+                        <div class="absolute p-4 inset-y-0 flex items-center text-gray-600">
+                            <!-- Icono RiLockUnlockFill aquí -->
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="mt-4 flex items-center text-gray-500">
+                            <input
+                                type="checkbox"
+                                id="remember"
+                                name="remember"
+                                class="mr-2"
+                            />
+                            <label class="text-sm" for="remember"></label>
+                            <p>Recordar mi sesión.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between mt-8">
+                        <a href="/">
+                            <button class="flex justify-start  py-2 px-4 text-sm uppercase rounded bg-white hover:bg-gray-100 text-secondary border border-transparent hover:border-transparent hover:text-gray-700 shadow-md hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 mb-2">
+                                Volver
+                            </button>
+                        </a>
+                        <button
+                            type="button"
+                            onclick="handleLogin()"
+                            class="text-white py-2 px-4 uppercase rounded bg-secondary hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5 justify-center"
+                        >
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="/js/login.js"></script>
+    </body>
+</html>

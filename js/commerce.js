@@ -43,46 +43,68 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ]
 
-    // Lista de productos (puedes agregar más productos)
     const allProducts = [
-        { title: 'Chocolates',  price: '$4500.00',tipoAviso:"Servicio", comercio: comercios[0] },
-        { title: 'Chocolates',  price: '$4000.00',tipoAviso:"Producto", comercio: comercios[1] },
-        { title: 'Recuerdos',   price: '$2500.00',tipoAviso:"Servicio", comercio: comercios[2] },
-        { title: 'Helados',     price: '$3000.00',tipoAviso:"Servicio", comercio: comercios[3] },
-        { title: 'Recuerdos',   price: '$2300.00',tipoAviso:"Producto", comercio: comercios[4] },
-        { title: 'Recuerdos',   price: '$2150.00',tipoAviso:"Servicio", comercio: comercios[5] },
-
+        { title: 'Chocolates', price: '$4500.00', comercio: comercios[0], comercianteLink: 'https://www.ejemplo.com/comerciante1', detalleLink: 'https://www.ejemplo.com/detalle1' },
+        { title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'https://www.ejemplo.com/comerciante2', detalleLink: 'https://www.ejemplo.com/detalle2' },
+        { title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'https://www.ejemplo.com/comerciante3', detalleLink: 'https://www.ejemplo.com/detalle3' },
+        { title: 'Helados', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
+        { title: 'Recuerdos', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
+        { title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
+        // ... otros productos
     ];
 
-    // Renderizar productos
-    function renderProducts(products) {
-        for (const marker of markers) {
-            marker.remove();
-        }
-        markers = [];
-        const productList = document.getElementById('productList');
-        productList.innerHTML = '';
+    
 
-        products.forEach((product) => {
-            const productContainer = document.createElement('div');
-            productContainer.classList.add('cursor-pointer', 'border','h-content' , 'border-gray-300', 'w-[25vw]', 'rounded', 'p-4', 'hover:shadow-md');
-            productContainer.innerHTML = `
-                <h2 class="text-xl font-bold mb-2">${product.title}</h2>
-                <p class="text-gray-700">${product.price}</p>
-                <p class="text-gray-700">${product.comercio.name}</p>
-                <p class="text-gray-700">${product.tipoAviso}</p>
-            `;
-            productContainer.addEventListener('click', function () {
-                handleProductClick(product);
-            });
-            productList.appendChild(productContainer);
-
-            const nombreSinEspacioYMayusculas = product.comercio.name.toLowerCase().replace(/\s+/g, '');
-            const marker = L.marker(product.comercio.position).addTo(map);
-            marker.bindPopup(`<a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank">${product.comercio.name}</a>`);
-            markers.push(marker);
-        });
+// Renderizar productos
+function renderProducts(products) {
+    for (const marker of markers) {
+        marker.remove();
     }
+    markers = [];
+    const productList = document.getElementById('productList');
+    productList.innerHTML = '';
+
+    products.forEach((product) => {
+        const productContainer = document.createElement('div');
+        productContainer.classList.add('cursor-pointer', 'border', 'h-content', 'border-gray-300', 'lg:w-[30vw]', 'rounded', 'p-4', 'hover:shadow-md');
+        productContainer.innerHTML = `
+            <h2 class="text-xl font-bold mb-2">${product.title}</h2>
+            <p class="text-gray-700">${product.price}</p>
+            <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded" data-lat="${product.comercio.position[0]}" data-lng="${product.comercio.position[1]}">Ir al mapa</button>
+           
+            <button class="bg-purple-500 text-white px-4 py-2 mt-2 rounded" onclick="window.location='${product.comercianteLink}'">Página Comerciante</button>
+            <button class="bg-yellow-500 text-white px-4 py-2 mt-2 rounded" onclick="window.location='${product.detalleLink}'">Producto Detalle</button>
+        `;
+        productContainer.addEventListener('click', function () {
+            handleProductClick(product);
+        });
+        productList.appendChild(productContainer);
+
+        const nombreSinEspacioYMayusculas = product.comercio.name.toLowerCase().replace(/\s+/g, '');
+        const marker = L.marker(product.comercio.position).addTo(map);
+        marker.bindPopup(`<a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank">${product.comercio.name}</a>`);
+        markers.push(marker);
+    });
+
+    // Agregar eventos click para los botones adicionales
+    const productButtons = document.querySelectorAll('#productList button');
+    productButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+            if (this.getAttribute('data-lat') && this.getAttribute('data-lng')) {
+                const lat = parseFloat(this.getAttribute('data-lat'));
+                const lng = parseFloat(this.getAttribute('data-lng'));
+                map.setView([lat, lng], 20);
+            } else if (this.getAttribute('data-product')) {
+                const productName = this.getAttribute('data-product');
+                alert(`Aviso del Producto: ${productName}`);
+            } else if (this.getAttribute('data-commerce')) {
+                const commerceName = this.getAttribute('data-commerce');
+                alert(`Ir al Comercio: ${commerceName}`);
+            }
+        });
+    });
+}
+
 
 
     renderProducts(allProducts); // Mostrar todos los productos inicialmente
