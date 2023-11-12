@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secretaria de Turismo</title>
+    <link rel="icon" href="imgs/icons/icon-page.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/6616501bac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00759c",
+              secondary: "#004f69",
+              semiBlack: "#011627",
+              lightBlue: "#7dd3fc",
+            },
+          },
+          backgroundImage: {
+            circuitoChico:
+              "url('../imgs/atractivos/circuitochico/Banner3.jpg')",
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white">
+    <header
+      class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50"
+    >
+      <div class="flex relative font-bold">
+        <a href="/" id="home-link"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            fill="currentColor"
+            class="bi bi-house-fill inline-block"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+            />
+            <path
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+            />
+          </svg>
+          Secretaria de Turismo</a
+        >
+      </div>
+      <ul
+        id="menu"
+        class="fixed hidden bg-white w-[100%] h-full font-bold flex-1 flex flex-col items-center justify-center gap-10 z-50 md:flex md:w-full md:h-full md:flex-row md:gap-0 md:static md:items-center md:justify-end md:[&>li>a]:px-3.5 md:[&>li>a]:font-medium"
+      >
+        <li><a href="/html/centers.html">Centros de atención</a></li>
+        <li><a href="/html/commerce.html">Comercios</a></li>
+        <li><a href="">Iniciar sesión</a></li>
+      </ul>
+      <svg
+        id="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-list items-center w-11 h-full inline-block cursor-pointer md:hidden transition-all dutarion-500 z-50"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
+    </header>
+
+    <main class="px-6 py-2 mb-12">
+      <!-- TITULO -->
+      <h2 class="mb-4 text-4xl font-extrabold text-center text-secondary">
+        Atractivos de Isla Victoria
+      </h2>
+
+      <!-- IMAGEN Y TEXTO DEL PRINCIPIO -->
+      <div class="h-[50vh] w-[90vw] mx-auto flex items-center justify-center">
+        <div
+          class="relative w-full h-full rounded-3xl"
+          style="
+            background: url('../imgs/atractivos/islavictoria/banner.jpg')
+              center/cover no-repeat;
+          "
+        >
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 rounded-3xl flex items-center justify-center"
+          >
+            <p
+              class="text-white text-[16px] md:text-2xl font-semibold p-8 rounded-md"
+            >
+              La Isla Victoria, anclada en el Lago Nahuel Huapi, ofrece una
+              experiencia única. El viaje en barco revela vistas asombrosas de
+              las montañas que rodean el lago. Una vez en la isla, el Bosque de
+              Arrayanes cautiva con sus árboles de tono canela, creando un
+              paisaje mágico. Caminar por los senderos sumerge a los visitantes
+              en un cuento de hadas, mientras que el circuito histórico y el
+              Museo de la Isla Victoria brindan una conexión cultural.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 gap-12 mt-10 2xl:grid-cols-3 md:grid-cols-2 md:px-12"
+      >
+        <!-- ATRACTIVO 1 -->
+        <div class="md:p-8 p-2 bg-white h-fit lg:h-[100%] border rounded-xl">
+          <h1
+            class="font-semibold text-gray-900 leading-none text-xl mt-1 capitalize truncate py-3"
+          >
+            Navegación por el Lago Nahuel Huapi
+          </h1>
+          <img
+            class="rounded-lg w-full h-[50%] object-cover mb-2"
+            src="../imgs/atractivos/islavictoria/navegacion.jpg"
+          />
+          <div class="max-w-full">
+            <p
+              class="text-[12px] md:text-base font-medium tracking-wide text-gray-600 mt-1"
+            >
+              Para llegar a la Isla Victoria, puedes embarcarte en una
+              emocionante travesía en barco por el Lago Nahuel Huapi. Durante el
+              viaje, disfrutarás de vistas panorámicas de las montañas
+              circundantes y del propio lago.
+            </p>
+            <p
+              class="text-base font-medium tracking-wide text-gray-600 mt-1"
+            ></p>
+          </div>
+        </div>
+
+        <!-- ATRACTIVO 2 -->
+
+        <div class="md:p-8 p-2 bg-white h-fit lg:h-[100%] border rounded-xl">
+          <h1
+            class="font-semibold text-gray-900 leading-none text-xl mt-1 capitalize truncate py-3"
+          >
+            Bosque de Arrayanes
+          </h1>
+          <img
+            class="rounded-lg w-full h-[50%] object-cover mb-2"
+            src="../imgs/atractivos/islavictoria/bosque-arrayanesjpg.jpg"
+          />
+          <div class="max-w-full">
+            <p
+              class="text-[12px] md:text-base font-medium tracking-wide text-gray-600 mt-1"
+            >
+              En la Isla Victoria, podrás explorar el mágico Bosque de
+              Arrayanes. Este bosque único alberga árboles de arrayanes con
+              troncos de color canela, creando un paisaje encantador. Puedes
+              caminar por senderos bien marcados para sumergirte en este entorno
+              especial.
+            </p>
+            <p
+              class="text-base font-medium tracking-wide text-gray-600 mt-1"
+            ></p>
+          </div>
+        </div>
+
+        <!-- ATRACTIVO 3 -->
+
+        <div class="md:p-8 p-2 bg-white h-fit lg:h-[100%] border rounded-xl">
+          <h1
+            class="font-semibold text-gray-900 leading-none text-xl mt-1 capitalize truncate py-3"
+          >
+            Fauna y Flora Local
+          </h1>
+          <img
+            class="rounded-lg w-full h-[50%] object-cover mb-2"
+            src="../imgs/atractivos/islavictoria/florafauna.webp"
+          />
+          <div class="max-w-full">
+            <p
+              class="text-[12px] md:text-base font-medium tracking-wide text-gray-600 mt-1"
+            >
+              La isla alberga una variedad de vida silvestre, incluyendo aves
+              autóctonas. La oportunidad de avistar aves y explorar la flora
+              local añade un componente naturalista a la visita, perfecto para
+              amantes de la biodiversidad.
+            </p>
+            <p
+              class="text-base font-medium tracking-wide text-gray-600 mt-1"
+            ></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Añadir más secciones para otros atractivos según sea necesario -->
+    </main>
+
+    <script src="js/header.js"></script>
+  </body>
+</html>
