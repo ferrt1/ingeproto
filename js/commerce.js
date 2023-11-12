@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Lista de productos (puedes agregar más productos)
     const allProducts = [
-        { title: 'Chocolates', price: '$4500.00', comercio: comercios[0] },
-        { title: 'Chocolates', price: '$4000.00', comercio: comercios[1] },
-        { title: 'Recuerdos', price: '$2500.00', comercio: comercios[2] },
-        { title: 'Helados', price: '$3000.00', comercio: comercios[3] },
-        { title: 'Recuerdos', price: '$2300.00', comercio: comercios[4] },
-        { title: 'Recuerdos', price: '$2150.00', comercio: comercios[5] },
+        { title: 'Chocolates',  price: '$4500.00',tipoAviso:"Servicio", comercio: comercios[0] },
+        { title: 'Chocolates',  price: '$4000.00',tipoAviso:"Producto", comercio: comercios[1] },
+        { title: 'Recuerdos',   price: '$2500.00',tipoAviso:"Servicio", comercio: comercios[2] },
+        { title: 'Helados',     price: '$3000.00',tipoAviso:"Servicio", comercio: comercios[3] },
+        { title: 'Recuerdos',   price: '$2300.00',tipoAviso:"Producto", comercio: comercios[4] },
+        { title: 'Recuerdos',   price: '$2150.00',tipoAviso:"Servicio", comercio: comercios[5] },
 
     ];
 
@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
             productContainer.innerHTML = `
                 <h2 class="text-xl font-bold mb-2">${product.title}</h2>
                 <p class="text-gray-700">${product.price}</p>
+                <p class="text-gray-700">${product.comercio.name}</p>
+                <p class="text-gray-700">${product.tipoAviso}</p>
             `;
             productContainer.addEventListener('click', function () {
                 handleProductClick(product);
