@@ -63,16 +63,19 @@ function renderProducts(products) {
     markers = [];
     const productList = document.getElementById('productList');
     productList.innerHTML = '';
-
+    
     products.forEach((product) => {
+        const nombreSinEspacioYMayusculas = product.comercio.name.toLowerCase().replace(/\s+/g, '');
         const productContainer = document.createElement('div');
         productContainer.classList.add('cursor-pointer', 'border', 'h-content', 'border-gray-300', 'lg:w-[30vw]', 'rounded', 'p-4', 'hover:shadow-md');
         productContainer.innerHTML = `
             <h2 class="text-xl font-bold mb-2">${product.title}</h2>
             <p class="text-gray-700">${product.price}</p>
+            <p class="text-gray-700">${product.comercio.name}</p>
+
             <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded" data-lat="${product.comercio.position[0]}" data-lng="${product.comercio.position[1]}">Ir al mapa</button>
+            <a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank"> <button class="bg-purple-500 text-white px-4 py-2 mt-2 rounded">Página Comerciante</button></a>
            
-            <button class="bg-purple-500 text-white px-4 py-2 mt-2 rounded" onclick="window.location='${product.comercianteLink}'">Página Comerciante</button>
             <button class="bg-yellow-500 text-white px-4 py-2 mt-2 rounded" onclick="window.location='${product.detalleLink}'">Producto Detalle</button>
         `;
         productContainer.addEventListener('click', function () {
@@ -80,7 +83,6 @@ function renderProducts(products) {
         });
         productList.appendChild(productContainer);
 
-        const nombreSinEspacioYMayusculas = product.comercio.name.toLowerCase().replace(/\s+/g, '');
         const marker = L.marker(product.comercio.position).addTo(map);
         marker.bindPopup(`<a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank">${product.comercio.name}</a>`);
         markers.push(marker);
