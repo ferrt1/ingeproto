@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const comercios = [
         {
-            name: 'paradise chocolate',
+            name: 'Paradise Chocolates',
             position: [-41.143171230438206, -71.28930529140682]
         },
         {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'Recuerdos Juancito',
-            position: [-41.140268733884774, -71.29094621166738]
+            position: [-41.139897659283825, -71.31086340025574]
         },
         {
             name: 'La Peninsula chocolateria',
@@ -45,9 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Lista de productos (puedes agregar más productos)
     const allProducts = [
-        { title: 'Chocolates', price: '$5.00', comercio: comercios[0] },
-        { title: 'Chocolates1', price: '$5.00', comercio: comercios[1] },
-        { title: 'Recuerdos', price: '$10.00', comercio: comercios[2] },
+        { title: 'Chocolates', price: '$4500.00', comercio: comercios[0] },
+        { title: 'Chocolates', price: '$4000.00', comercio: comercios[1] },
+        { title: 'Recuerdos', price: '$2500.00', comercio: comercios[2] },
+        { title: 'Helados', price: '$3000.00', comercio: comercios[3] },
+        { title: 'Recuerdos', price: '$2300.00', comercio: comercios[4] },
+        { title: 'Recuerdos', price: '$2150.00', comercio: comercios[5] },
+
     ];
 
     // Renderizar productos
@@ -61,29 +65,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         products.forEach((product) => {
             const productContainer = document.createElement('div');
-            productContainer.classList.add('cursor-pointer', 'border', 'border-gray-300', 'rounded', 'p-4', 'hover:shadow-md');
+            productContainer.classList.add('cursor-pointer', 'border','h-content' , 'border-gray-300', 'w-[25vw]', 'rounded', 'p-4', 'hover:shadow-md');
             productContainer.innerHTML = `
                 <h2 class="text-xl font-bold mb-2">${product.title}</h2>
                 <p class="text-gray-700">${product.price}</p>
-                <p class="text-gray-700">${product.comercio.name}</p>
             `;
             productContainer.addEventListener('click', function () {
                 handleProductClick(product);
             });
             productList.appendChild(productContainer);
 
+            const nombreSinEspacioYMayusculas = product.comercio.name.toLowerCase().replace(/\s+/g, '');
             const marker = L.marker(product.comercio.position).addTo(map);
-            marker.on('click', function () {
-                console.log(product);
-
-                console.log('¡Hiciste clic en el marcador!');
-            });
-
+            marker.bindPopup(`<a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank">${product.comercio.name}</a>`);
             markers.push(marker);
         });
     }
 
-    // Mostrar todos los productos inicialmente
 
     renderProducts(allProducts); // Mostrar todos los productos inicialmente
 

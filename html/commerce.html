@@ -84,7 +84,7 @@
             type="text"
             id="searchInput"
             class="border p-2 mx-5 w-[25%]"
-            placeholder="Buscar productos..."
+            placeholder="Buscar productos o servicios..."
           />
         </div>
         <button
@@ -94,7 +94,9 @@
           Buscar
         </button>
         <div class="lg:flex lg:justify-between md:gap-4 mb-12 h-full p-8">
-          <div id="productList" class="mt-4 grid grid-cols-1 gap-4"></div>
+          <div id="productList" class="mt-4 grid grid-cols-1 gap-4 h-[60vh] overflow-scroll">
+
+          </div>
           <div id="map" class="mt-7 flex h-[60vh] lg:w-[50%] rounded-xl"></div>
         </div>
       </div>
