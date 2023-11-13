@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
             position: [-41.143171230438206, -71.28930529140682]
         },
         {
-            name: 'Chocolateria',
-            position: [-41.140268733884774, -71.29094621166738]
+            name: 'Benroth Chocolates',
+            position: [-41.13746678605862, -71.30353999998938]
         },
         {
-            name: 'Recuerdos Juancito',
-            position: [-41.139897659283825, -71.31086340025574]
+            name: 'El Bosque Bariloche Artesanías',
+            position: [-41.133716507285925, -71.30504264982974]
         },
         {
-            name: 'La Peninsula chocolateria',
+            name: 'La Peninsula Chocolateria',
             position: [-41.134400696158814, -71.30123616038883]
         },
         {
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
             position: [-41.135152821146754, -71.29523224662391]
         },
         {
-            name: 'Las Brujas regaleria',
+            name: 'Las Brujas Regaleria',
             position: [-41.13421035618051, -71.31204064996929]
         },
         {
-            name: 'Los duendes del Bosque',
+            name: 'Los Duendes del Bosque',
             position: [-41.133715427280244, -71.3089203182679]
         }
     ]
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: 'Chocolates', price: '$4500.00', comercio: comercios[0], comercianteLink: 'https://www.ejemplo.com/comerciante1', detalleLink: 'https://www.ejemplo.com/detalle1' },
         { title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'https://www.ejemplo.com/comerciante2', detalleLink: 'https://www.ejemplo.com/detalle2' },
         { title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'https://www.ejemplo.com/comerciante3', detalleLink: 'https://www.ejemplo.com/detalle3' },
-        { title: 'Helados', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
-        { title: 'Recuerdos', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
+        { title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
+        { title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
         { title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
         // ... otros productos
     ];

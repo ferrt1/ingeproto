@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-details {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .currency-info {
+            margin-top: 20px;
+        }
+
+        .commerce-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Detalles del Producto</h1>
+</header>
+
+<main>
+    <div class="product-details">
+        <div class="product-image">
+            <img src="/imgs/productos/tableta.png" alt="Foto del Producto">
+        </div>
+        <div class="product-info">
+            <h2>Tableta de chocolate</h2>
+            <p>Detalle del Producto: 80g de chocolate con 60% cacao y 0% azúcar. Endulzado con maltitol. Libre de gluten. Producto sin TACC. Apto celiacos.</p>
+            <p>Categoría: Chocolate</p>
+
+            <div class="currency-info">
+                <h3>Cambio de Divisa</h3>
+                <p>Precio en USD: $100.00</p>
+                <p>Precio en EUR: €85.00</p>
+            </div>
+
+            <div class="commerce-info">
+                <h3>Datos del Comercio</h3>
+                <p>Chocolateria</p>
+                <p>Descripcion Comercio</p>
+                <p>Categoria relacionada</p>
+                <p>Direccion</p>
+                <p>Horarios</p>
+                <p>Telefono</p>
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
