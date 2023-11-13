@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
 
     const allProducts = [
-        { title: 'Chocolates1', price: '$4500.00', comercio: comercios[0], comercianteLink: 'https://www.ejemplo.com/comerciante1', detalleLink: 'C:\Users\matias\Desktop\ingeproto\html\avisos\avisos.html'},
-        { title: 'Chocolates2', price: '$4000.00', comercio: comercios[1], comercianteLink: 'https://www.ejemplo.com/comerciante2', detalleLink: 'https://www.ejemplo.com/detalle2' },
-        { title: 'Recuerdos1', price: '$2500.00', comercio: comercios[2], comercianteLink: 'https://www.ejemplo.com/comerciante3', detalleLink: 'https://www.ejemplo.com/detalle3' },
-        { title: 'Chocolates3', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
-        { title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
-        { title: 'Recuerdos2', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
+        {tipo:'Producto', title: 'Chocolates', price: '$4500.00', comercio: comercios[0], comercianteLink: 'https://www.ejemplo.com/comerciante1', detalleLink: 'https://www.ejemplo.com/detalle1' },
+        {tipo:'Producto', title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'https://www.ejemplo.com/comerciante2', detalleLink: 'https://www.ejemplo.com/detalle2' },
+        {tipo:'Producto', title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'https://www.ejemplo.com/comerciante3', detalleLink: 'https://www.ejemplo.com/detalle3' },
+        {tipo:'Producto', title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
+        {tipo:'Producto', title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
+        {tipo:'Producto', title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
         // ... otros productos
     ];
 
@@ -73,6 +73,7 @@ function renderProducts(products) {
             <h2 class="text-xl font-bold mb-2">${product.title}</h2>
             <p class="text-gray-700">${product.price}</p>
             <p class="text-gray-700">${product.comercio.name}</p>
+            <p class="text-gray-700">${product.tipo}</p>
 
             <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded" data-lat="${product.comercio.position[0]}" data-lng="${product.comercio.position[1]}">Ir al mapa</button>
             <a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank"> <button class="bg-purple-500 text-white px-4 py-2 mt-2 rounded">Página Comerciante</button></a>
