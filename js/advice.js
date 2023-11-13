@@ -29,60 +29,58 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
   });
   
 
-//   const getSimilarProductsClousure = async (searchedProduct) => {
-//     const baseUrl = 'https://api.mercadolibre.com/sites/MLA/search?q=';
-//     const similarProductsApi = baseUrl + searchedProduct;
-//     const similarProductsResponse = (await (await fetch(similarProductsApi)).json()).results;
-//     let iterator = 4;
-  
-//     return () => {
-//       const similarProducts = [];
-//       for (let i = 0; i < iterator; i++) {
-//         const product = similarProductsResponse[i];
-//         const data = { nombre: product.title, vendedor: product.seller.nickname, precio: product.price };
-//         similarProducts.push(data);
-//       }
-//       iterator += 4;
-//       return similarProducts;
-//     };
-//   };
+  const getSimilarProductsClousure = async (searchedProduct) => {
+    const baseUrl = 'https://api.mercadolibre.com/sites/MLA/search?q=';
+    const similarProductsApi = baseUrl + searchedProduct;
+    const similarProductsResponse = (await (await fetch(similarProductsApi)).json()).results;
+    
+    let iterator = 4;
 
-//   const [productName, setProductName] = useState('');
-//   const [searchResults, setSearchResults] = useState([]);
+    console.log(similarProductsResponse); // Puedes imprimir la respuesta para verificar en la consola
 
-//   const handleSearch = async () => {
-//     const getSimilarProducts = await getSimilarProductsClousure(productName);
-//     const results = getSimilarProducts();
-//     setSearchResults(results);
-//   };
+    return () => {
+      const similarProducts = [];
+      for (let i = 0; i < iterator; i++) {
+        const product = similarProductsResponse[i];
+        const data = { nombre: product.title, vendedor: product.seller.nickname, precio: product.price };
+        similarProducts.push(data);
+      }
+      iterator += 4;
+      return similarProducts;
+    };
+  };
 
-//   useEffect(() => {
-//     if (productName) {
-//       handleSearch();
-//     }
-//   }, [productName]);
+  async function searchSimilarProducts() {
+    const nombreProducto = document.getElementById('nombreProducto').value;
+    const checkboxPrecioProducto = document.getElementById('precioProducto');
 
+    // Verificar si se ingresó un nombre y se marcó el checkbox
+    if (nombreProducto && checkboxPrecioProducto.checked) {
+      // Obtener la función de productos similares
+      const getSimilarProducts = await getSimilarProductsClousure(nombreProducto);
+      // Obtener y mostrar los resultados
+      const results = getSimilarProducts();
+      displaySimilarProducts(results);
+    } else {
+      alert('Por favor, ingrese un nombre y marque el checkbox "Agregar Precio" antes de consultar productos similares.');
+    }
+  }
 
-//   return (
-//     <div className="max-w-md mx-auto mt-12 p-6 bg-gray-100 rounded-md">
-//       <h2 className='p-2'>Consulta productos similares:</h2>
-//       <input
-//         type="text"
-//         value={productName}
-//         onChange={(e) => setProductName(e.target.value)}
-//         placeholder="Nombre del producto"
-//         className="w-full p-2 mb-4 border rounded-md"
-//       />
-//       <button onClick={handleSearch} className="w-full p-2 bg-blue-500 text-white rounded-md">
-//         Buscar
-//       </button>
-//       {searchResults.map((product, index) => (
-//         <div key={index} className="my-4 p-4 bg-white rounded-md shadow-md">
-//           <p className="text-lg font-semibold">Nombre: {product.nombre}</p>
-//           <p>Vendedor: {product.vendedor}</p>
-//           <p>Precio: {product.precio}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
+  // Función para mostrar los resultados de productos similares
+  function displaySimilarProducts(products) {
+    const resultsContainer = document.getElementById('searchResultsContainer');
+    resultsContainer.innerHTML = '';
+
+    products.slice(0, 4).forEach(product => {
+      const productContainer = document.createElement('div');
+      productContainer.className = 'product my-4 p-4 bg-white rounded-md shadow-md';
+      productContainer.innerHTML = `
+        <p class="product-name text-lg font-semibold">${product.nombre}</p>
+        <p class="product-price text-black">$${product.precio}</p>
+        <p class="product-seller text-black">Vendedor: ${product.vendedor}</p>
+      `;
+      resultsContainer.appendChild(productContainer);
+    });
+    // Muestra la sección de resultados
+    document.getElementById('searchResults').classList.remove('hidden');
+  }
