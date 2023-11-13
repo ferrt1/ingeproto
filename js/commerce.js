@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
             position: [-41.13421035618051, -71.31204064996929]
         },
         {
-            name: 'Los Duendes del Bosque',
-            position: [-41.133715427280244, -71.3089203182679]
+            name: 'La Casita Restaurante Bariloche',
+            position: [-41.13451695128048, -71.30860310621514]
         }
     ]
 
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {tipo:'Producto', title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
         {tipo:'Producto', title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
         {tipo:'Producto', title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
+        {tipo:'Servicio', title: 'Restaurant', price: '$', comercio: comercios[6], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' }
         // ... otros productos
     ];
 
