@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
 
     const allProducts = [
-        {tipo:'Producto', title: 'Chocolates', price: '$4500.00', comercio: comercios[0], comercianteLink: 'https://www.ejemplo.com/comerciante1', detalleLink: 'https://www.ejemplo.com/detalle1' },
-        {tipo:'Producto', title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'https://www.ejemplo.com/comerciante2', detalleLink: 'https://www.ejemplo.com/detalle2' },
-        {tipo:'Producto', title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'https://www.ejemplo.com/comerciante3', detalleLink: 'https://www.ejemplo.com/detalle3' },
-        {tipo:'Producto', title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
-        {tipo:'Producto', title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
-        {tipo:'Producto', title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
-        {tipo:'Servicio', title: 'Restaurant', price: '$', comercio: comercios[6], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' }
+        {tipo:'Producto', title: 'Chocolates', price: '$4500.00', comercio: comercios[0], comercianteLink: 'commerces/paradisechocolates.html', detalleLink: 'avisos/chocolates1.html' },
+        {tipo:'Producto', title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'commerces/benrothchocolates.html', detalleLink: 'avisos/chocolates2.html' },
+        {tipo:'Producto', title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'commerces/elbosquebarilocheartesanías.html', detalleLink: 'avisos/recuerdos1.html' },
+        {tipo:'Producto', title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'commerces/lapeninsulachocolateria.html', detalleLink: 'avisos/chocolates3.html' },
+        {tipo:'Producto', title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'commerces/malgarihelados.html', detalleLink: 'visos/helados.html' },
+        {tipo:'Producto', title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'commerces/lasbrujasregaleria.html', detalleLink: 'avisos/recuerdos2.html' },
+        {tipo:'Servicio', title: 'Restaurant', price: '$', comercio: comercios[6], comercianteLink: 'commerces/lacasitarestaurantebariloche.html', detalleLink: 'https://www.ejemplo.com/detalle6' }
         // ... otros productos
     ];
 
@@ -77,8 +77,9 @@ function renderProducts(products) {
             <p class="text-gray-700">${product.tipo}</p>
 
             <button class="bg-blue-500 text-white px-4 py-2 mt-2 rounded" data-lat="${product.comercio.position[0]}" data-lng="${product.comercio.position[1]}">Ir al mapa</button>
-            <a href="/html/commerces/${nombreSinEspacioYMayusculas}.html" target="_blank"> <button class="bg-purple-500 text-white px-4 py-2 mt-2 rounded">Página Comerciante</button></a>
-            <a href="/html/avisos/${nombreSinEspacioYMayusculas2}.html" target="_blank"> <button class="bg-yellow-500 text-white px-4 py-2 mt-2 rounded">Ver producto</button></a>
+            <a href="${product.comercianteLink}" target="_blank"> <button class="bg-purple-500 text-white px-4 py-2 mt-2 rounded">Página Comerciante</button></a>
+            <a href="${product.detalleLink}" target="_blank"> <button class="bg-yellow-500 text-white px-4 py-2 mt-2 rounded">Ver producto</button></a>
+
          
         `;
         productContainer.addEventListener('click', function () {
