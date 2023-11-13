@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Producto</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .product-details {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .product-image {
+        flex: 1;
+        margin-right: 20px;
+      }
+
+      .product-image img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+      }
+
+      .product-info {
+        flex: 1;
+      }
+
+      .currency-info {
+        margin-top: 20px;
+      }
+
+      .commerce-info {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Detalles del Servicio</h1>
+    </header>
+
+    <main>
+      <div class="product-details">
+        <div class="product-image">
+          <img src="/imgs/productos/restaurant.jpg" alt="Foto del Producto" />
+        </div>
+        <div class="product-info">
+          <h2>La Casita Restaurante Bariloche</h2>
+          <p>
+            Nuestro local de comida es un refugio gastronómico, abierto y listo
+            para recibirlos desde las 12:00 hasta las 23:30. Ofrecemos una
+            experiencia culinaria que se adapta a sus necesidades, ya sea un
+            almuerzo rápido o una cena relajada. Nuestro menú diverso tiene
+            opciones para todos los gustos, brindando flexibilidad a lo largo
+            del día. Los invitamos a disfrutar de una deliciosa comida en un
+            ambiente acogedor, perfecto para cualquier ocasión. Esperamos verlos
+            pronto.
+          </p>
+          <p>Categoría: Restaurant</p>
+
+          <div class="currency-info">
+            <h3>Cambio de Divisa</h3>
+            <p>Precio en USD: $</p>
+          </div>
+
+          <div class="commerce-info">
+            <h3>Detalles</h3>
+            <p>Direccion:Quaglia 342, San Carlos de Bariloche, Río Negro</p>
+            <p>Horarios:Lunes a Viernes, 12:00 - 23:30</p>
+            <p>Telefono:+0294 442 6741</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

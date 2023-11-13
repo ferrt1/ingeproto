@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
         {tipo:'Producto', title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'commerces/benrothchocolates.html', detalleLink: 'avisos/chocolates2.html' },
         {tipo:'Producto', title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'commerces/elbosquebarilocheartesanías.html', detalleLink: 'avisos/recuerdos1.html' },
         {tipo:'Producto', title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'commerces/lapeninsulachocolateria.html', detalleLink: 'avisos/chocolates3.html' },
-        {tipo:'Producto', title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'commerces/malgarihelados.html', detalleLink: 'visos/helados.html' },
+        {tipo:'Producto', title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'commerces/malgarihelados.html', detalleLink: 'avisos/helados.html' },
         {tipo:'Producto', title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'commerces/lasbrujasregaleria.html', detalleLink: 'avisos/recuerdos2.html' },
-        {tipo:'Servicio', title: 'Restaurant', price: '$', comercio: comercios[6], comercianteLink: 'commerces/lacasitarestaurantebariloche.html', detalleLink: 'https://www.ejemplo.com/detalle6' }
+        {tipo:'Servicio', title: 'Restaurant', price: '$', comercio: comercios[6], comercianteLink: 'commerces/lacasitarestaurantebariloche.html', detalleLink: 'avisos/restaurant.html' }
         // ... otros productos
     ];
 
