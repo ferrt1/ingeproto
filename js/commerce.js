@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'Benroth Chocolates',
-            position: [-41.140268733884774, -71.29094621166738]
+            position: [-41.13746678605862, -71.30353999998938]
         },
         {
-            name: 'Recuerdos Juancito',
-            position: [-41.139897659283825, -71.31086340025574]
+            name: 'El Bosque Bariloche Artesanías',
+            position: [-41.133716507285925, -71.30504264982974]
         },
         {
-            name: 'La Peninsula chocolateria',
+            name: 'La Peninsula Chocolateria',
             position: [-41.134400696158814, -71.30123616038883]
         },
         {
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
             position: [-41.135152821146754, -71.29523224662391]
         },
         {
-            name: 'Las Brujas regaleria',
+            name: 'Las Brujas Regaleria',
             position: [-41.13421035618051, -71.31204064996929]
         },
         {
-            name: 'Los duendes del Bosque',
+            name: 'Los Duendes del Bosque',
             position: [-41.133715427280244, -71.3089203182679]
         }
     ]

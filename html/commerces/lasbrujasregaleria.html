@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Las Brujas Regaleria</title>
-        <link rel="icon" href="imgs/icons/icon-page.png" type="image/png">
+        <link rel="icon" href="../../imgs/icons/icon-page.png" type="image/png">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://kit.fontawesome.com/6616501bac.js" crossorigin="anonymous"></script>
         <script>
@@ -19,28 +19,101 @@
                 },
               },
             },
-          };
-        </script>
-      </head>
-<body>
-    <header class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50">
-        <div class="flex relative font-bold">
-          <a href="/" id="home-link"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-house-fill inline-block " viewBox="0 0 16 16">
-            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
-          </svg> Secretaria de Turismo</a>
-        </div>
-        <ul id="menu" class="fixed hidden bg-white w-[100%] h-full font-bold flex-1 flex flex-col items-center justify-center gap-10 z-50
-                      md:flex md:w-full md:h-full md:flex-row md:gap-0 md:static md:items-center md:justify-end md:[&>li>a]:px-3.5 md:[&>li>a]:font-medium">
-          <li><a href="/html/centers.html">Centros de atención</a></li>
-          <li><a href="/html/commerce.html">Comercios</a></li>
-          <li><a href="">Iniciar sesión</a></li>
-        </ul>
-        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list items-center w-11 h-full inline-block cursor-pointer md:hidden transition-all dutarion-500 z-50"  viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-        </svg>
-      </header>
+          }
+    </script>
+  </head>
+  <body>
+    <header
+      class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50"
+    >
+      <div class="flex relative font-bold">
+        <a href="/" id="home-link"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            fill="currentColor"
+            class="bi bi-house-fill inline-block"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+            />
+            <path
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+            />
+          </svg>
+          Secretaria de Turismo</a
+        >
+      </div>
+      <ul
+        id="menu"
+        class="fixed hidden bg-white w-[100%] h-full font-bold flex-1 flex flex-col items-center justify-center gap-10 z-50 md:flex md:w-full md:h-full md:flex-row md:gap-0 md:static md:items-center md:justify-end md:[&>li>a]:px-3.5 md:[&>li>a]:font-medium"
+      >
+        <li><a href="/html/centers.html">Centros de atención</a></li>
+        <li><a href="/html/commerce.html">Comercios</a></li>
+        <li><a href="">Iniciar sesión</a></li>
+      </ul>
+      <svg
+        id="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-list items-center w-11 h-full inline-block cursor-pointer md:hidden transition-all dutarion-500 z-50"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
+    </header>
+    <main>
+      <div class="container mx-auto p-4">
+        <!-- Encabezado -->
+        <h1 class="text-4xl font-bold mb-4">Las Brujas Regaleria</h1>
 
-      
-</body>
+        <!-- Descripción -->
+        <p class="text-gray-700 mb-4">
+          Las Brujas Regaleria es una tienda de regalos ubicada en Bariloche que
+          ofrece una amplia variedad de productos únicos y artesanales. Desde
+          souvenirs que capturan la esencia de la región hasta artículos de
+          diseño local, "Las Brujas" se destaca por brindar opciones
+          encantadoras y auténticas. Ya sea que busques regalos para amigos,
+          familiares o recuerdos especiales de tu visita a Bariloche, esta
+          tienda te invita a descubrir la magia de la artesanía local y a llevar
+          contigo un pedacito de la encantadora ciudad a orillas del Nahuel
+          Huapi.
+        </p>
+
+        <!-- Categoría Relacionada -->
+        <p class="text-gray-600 mb-4">
+          Categoría: <span class="text-blue-500">Recuerdos</span>
+        </p>
+
+        <!-- Datos de Contacto -->
+        <div class="mb-4">
+          <h2 class="text-xl font-semibold mb-2">Datos de Contacto</h2>
+          <!-- Dirección -->
+          <p class="text-gray-600">
+            San Martín 127 Local 11, R8400 San Carlos de Bariloche, Río Negro
+          </p>
+          <!-- Horarios -->
+          <p class="text-gray-600">Horarios: Lunes a Viernes, 9:00 - 20:00</p>
+          <!-- Teléfono -->
+          <p class="text-gray-600">Teléfono: +0294 451-0497</p>
+        </div>
+
+        <!-- Foto Principal -->
+        <img
+          src="../../imgs/comercios/brujeria/brujeria.JPG"
+          alt="Foto Principal"
+          class="w-full mb-4 rounded-lg"
+        />
+
+        <!-- Puedes agregar más contenido aquí, como fotos adicionales, comentarios, etc. -->
+      </div>
+    </main>
+  </body>
 </html>
