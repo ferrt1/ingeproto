@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             position: [-41.143171230438206, -71.28930529140682]
         },
         {
-            name: 'Chocolateria',
+            name: 'Benroth Chocolates',
             position: [-41.140268733884774, -71.29094621166738]
         },
         {
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: 'Chocolates', price: '$4500.00', comercio: comercios[0], comercianteLink: 'https://www.ejemplo.com/comerciante1', detalleLink: 'https://www.ejemplo.com/detalle1' },
         { title: 'Chocolates', price: '$4000.00', comercio: comercios[1], comercianteLink: 'https://www.ejemplo.com/comerciante2', detalleLink: 'https://www.ejemplo.com/detalle2' },
         { title: 'Recuerdos', price: '$2500.00', comercio: comercios[2], comercianteLink: 'https://www.ejemplo.com/comerciante3', detalleLink: 'https://www.ejemplo.com/detalle3' },
-        { title: 'Helados', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
-        { title: 'Recuerdos', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
+        { title: 'Chocolates', price: '$3000.00', comercio: comercios[3], comercianteLink: 'https://www.ejemplo.com/comerciante4', detalleLink: 'https://www.ejemplo.com/detalle4' },
+        { title: 'Helados', price: '$2300.00', comercio: comercios[4], comercianteLink: 'https://www.ejemplo.com/comerciante5', detalleLink: 'https://www.ejemplo.com/detalle5' },
         { title: 'Recuerdos', price: '$2150.00', comercio: comercios[5], comercianteLink: 'https://www.ejemplo.com/comerciante6', detalleLink: 'https://www.ejemplo.com/detalle6' },
         // ... otros productos
     ];
