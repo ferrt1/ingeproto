@@ -38,15 +38,70 @@
         </div>
     </header>
     <main>
-        <h1 class="text-center text-[36px] mt-12 leading-none text-secondary font-bold">Bienvenido a la vista de comerciante</h1>
-        <h2 class="text-center text-[28px] mt-6 leading-none text-secondary font-bold">Aqui podra administrar tus avisos</h2>
-        <div class="flex flex-col md:p-8 p-2 my-20 bg-white items-center ">
-            <a href="/html/avisos.html">
-                <div class="border text-secondary text-[21px] border-gray-950 rounded-xl w-[300px] md:w-[450px] p-24 hover:cursor-pointer hover:bg-secondary hover:text-white">
-                    <h4 class="text-center font-bold">Agregar avisos</h4>
-                </div>
-            </a>
+      <h1 class="text-center text-[36px] mt-12 leading-none text-secondary font-bold">Bienvenido a la vista de comerciante</h1>
+      <h2 class="text-center text-[28px] mt-6 leading-none text-secondary font-bold">Aquí podrás administrar tus avisos</h2>
+      <div id="agregarAvisos" class="flex flex-col md:p-8 p-2 my-20 bg-white items-center">
+          <div class="border text-secondary text-[21px] border-gray-950 rounded-xl w-[300px] md:w-[450px] p-24 hover:cursor-pointer hover:bg-secondary hover:text-white">
+            <h4 class="text-center font-bold">Agregar avisos</h4>
+          </div>
+      </div>
+
+
+      <div id="botonesAccion" class="hidden flex flex-row mt-16 justify-center align-center mx-6">
+
+        <button id="agregarServicio" class="bg-secondary text-white p-6  rounded mx-5 hover:bg-white hover:text-black hover:border-[2px] hover:border-black">Agregar Servicio</button>
+
+        <button id="agregarProducto" class="bg-secondary text-white p-6  rounded mx-5 hover:bg-white hover:text-black hover:border-[2px] hover:border-black">Agregar Producto</button>
+      </div>
+
+      <form id="formProducto" class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto">
+        <h2 class="text-2xl font-bold mb-4">Agregar Producto</h2>
+        <label for="nombreProducto" class="block mb-2">Nombre:</label>
+        <input type="text" id="nombreProducto" class="border p-2 mb-4 w-full rounded-md" />
+
+        <label for="detalleProducto" class="block mb-2">Detalle:</label>
+        <textarea id="detalleProducto" class="border p-2 mb-4 w-full rounded-md"></textarea>
+
+        <label for="fotoProducto" class="block text-gray-700 text-sm font-bold mb-2">Foto del Producto:</label>
+    <input type="file" id="fotoProducto" name="fotoProducto" accept="image/*" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" required>
+
+        <label for="categoriaProducto" class="block mb-2">Categoría:</label>
+        <input type="text" id="categoriaProducto" class="border p-2 mb-4 w-full rounded-md" />
+
+        <div class="mb-4">
+          <input type="checkbox" id="precioProducto" name="precioProducto" class="mr-2">
+          <label for="precioProducto" class="text-gray-700 text-sm">Agregar Precio</label>
         </div>
+        <div id="campoPrecio" class="mb-4 hidden">
+          <label for="precio" class="block text-gray-700 text-sm font-bold mb-2">Precio del Producto:</label>
+          <input type="text" id="precio" name="precio" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ingrese el precio del producto">
+        </div>
+        <a href="#" class="text-blue-500 bloc">Consultar precios similares</a>
+        <button type="submit" class="mt-4 bg-secondary text-white p-2 rounded block">Agregar Producto</button>
+      </form>
+
+      <!-- Formulario para Servicio -->
+      <form id="formServicio" class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto">
+        <h2 class="text-2xl font-bold mb-4">Agregar Servicio</h2>
+        <label for="restriccionesServicio" class="block mb-2">Restricciones:</label>
+        <textarea id="restriccionesServicio" class="border p-2 mb-4 w-full rounded-md"></textarea>
+
+        <div class="mb-4">
+          <input type="checkbox" id="precioAviso" name="precioAviso" class="mr-2">
+          <label for="precioAviso" class="text-gray-700 text-sm">Agregar Precio</label>
+        </div>
+        <div id="campoPrecioAviso" class="mb-4 hidden">
+          <label for="precioAviso" class="block text-gray-700 text-sm font-bold mb-2">Precio del Aviso:</label>
+          <input type="text" id="precioAviso" name="precioAviso" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ingrese el precio del aviso">
+        </div>
+
+        <label for="datosComercio" class="block mt-4">Datos del Comercio:</label>
+        <textarea id="datosComercio" class="border p-2 mb-4 w-full rounded-md"></textarea>
+
+        <button type="submit" class="mt-4 bg-secondary text-white p-2 rounded">Guardar Servicio</button>
+      </form>
     </main>
+
+    <script src="../js/advice.js"></script>
 </body>
 </html>
