@@ -28,6 +28,7 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
   });
   });
   
+// PRECIOS SIMILARES
 
   const getSimilarProductsClousure = async (searchedProduct) => {
     const baseUrl = 'https://api.mercadolibre.com/sites/MLA/search?q=';
@@ -35,8 +36,6 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     const similarProductsResponse = (await (await fetch(similarProductsApi)).json()).results;
     
     let iterator = 4;
-
-    console.log(similarProductsResponse); // Puedes imprimir la respuesta para verificar en la consola
 
     return () => {
       const similarProducts = [];
@@ -54,11 +53,9 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     const nombreProducto = document.getElementById('nombreProducto').value;
     const checkboxPrecioProducto = document.getElementById('precioProducto');
 
-    // Verificar si se ingresó un nombre y se marcó el checkbox
+
     if (nombreProducto && checkboxPrecioProducto.checked) {
-      // Obtener la función de productos similares
       const getSimilarProducts = await getSimilarProductsClousure(nombreProducto);
-      // Obtener y mostrar los resultados
       const results = getSimilarProducts();
       displaySimilarProducts(results);
     } else {
@@ -66,7 +63,6 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     }
   }
 
-  // Función para mostrar los resultados de productos similares
   function displaySimilarProducts(products) {
     const resultsContainer = document.getElementById('searchResultsContainer');
     resultsContainer.innerHTML = '';
@@ -81,6 +77,43 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
       `;
       resultsContainer.appendChild(productContainer);
     });
-    // Muestra la sección de resultados
     document.getElementById('searchResults').classList.remove('hidden');
   }
+
+
+// Alerta agregar
+
+
+document.getElementById('btnAgregarServicio').addEventListener('click', function () {
+  const nombreServicio = document.getElementById('nombreServicio').value.trim();
+  const detalleServicio = document.getElementById('detalleServicio').value.trim();
+  const restriccionesServicio = document.getElementById('restriccionesServicio').value.trim();
+  const datosComercio = document.getElementById('datosComercio').value.trim();
+  const precioAvisoCheckbox = document.getElementById('precioAviso');
+  const precioAvisoInput = document.getElementById('precioAviso');
+
+  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || datosComercio === '') {
+      alert('Por favor, complete todos los campos.');
+  } else if (precioAvisoCheckbox.checked && precioAvisoInput.value.trim() === '') {
+      alert('Por favor, complete el campo de precio del aviso.');
+  } else {
+      alert('Servicio guardado con éxito.');
+  }
+});
+
+document.getElementById('btnAgregarProducto').addEventListener('click', function () {
+  const nombreProducto = document.getElementById('nombreProducto').value.trim();
+  const detalleProducto = document.getElementById('detalleProducto').value.trim();
+  const fotoProducto = document.getElementById('fotoProducto').value.trim(); // Modificado para el campo de imagen
+  const categoriaProducto = document.getElementById('categoriaProducto').value.trim();
+  const precioProductoCheckbox = document.getElementById('precioProducto');
+  const precioProductoInput = document.getElementById('precio');
+
+  if (nombreProducto === '' || detalleProducto === '' || fotoProducto === '' || categoriaProducto === '') {
+      alert('Por favor, complete todos los campos.');
+  } else if (precioProductoCheckbox.checked && precioProductoInput.value.trim() === '') {
+      alert('Por favor, complete el campo de precio del producto.');
+  } else {
+      alert('Producto guardado con éxito.');
+  }
+});

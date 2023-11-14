@@ -59,16 +59,16 @@
         <form id="formProducto" class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] md:mx-auto">
           <h2 class="text-2xl font-bold mb-4">Agregar Producto</h2>
           <label for="nombreProducto" class="block mb-2">Nombre:</label>
-          <input type="text" id="nombreProducto" class="border border-black p-2 mb-4 w-full rounded-md b-[2px]" />
+          <input type="text" id="nombreProducto" class="border border-black p-2 mb-4 w-full rounded-md b-[2px]" required/>
   
           <label for="detalleProducto" class="block mb-2">Detalle:</label>
-          <textarea id="detalleProducto" class="border border-black p-2 mb-4 w-full rounded-md"></textarea>
+          <textarea id="detalleProducto" class="border border-black p-2 mb-4 w-full rounded-md" required></textarea>
   
           <label for="fotoProducto" class="block text-gray-700 text-sm font-bold mb-2">Foto del Producto:</label>
-      <input type="file" id="fotoProducto" name="fotoProducto" accept="image/*" class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" required>
+      <input type="file" id="fotoProducto" name="fotoProducto" accept="image/*" class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4">
   
           <label for="categoriaProducto" class="block mb-2">Categoría:</label>
-          <input type="text" id="categoriaProducto" class="border border-black p-2 mb-4 w-full rounded-md" />
+          <input type="text" id="categoriaProducto" class="border border-black p-2 mb-4 w-full rounded-md" required />
   
           <div class="mb-4">
             <input type="checkbox" id="precioProducto" name="precioProducto" class="mr-2">
@@ -79,7 +79,7 @@
             <input type="text" id="precio" name="precio" class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ingrese el precio del producto">
           </div>
           <button type="button" onclick="searchSimilarProducts()" class="mt-4 bg-secondary text-white p-2 rounded block">Consultar precios similares</button>
-          <button type="submit" class="mt-4 bg-secondary text-white p-2 rounded block">Agregar Producto</button>
+          <button id="btnAgregarProducto" type="submit" class="mt-4 bg-secondary text-white p-2 rounded block">Agregar Producto</button>
         </form>
         <div id="searchResults" class="hidden mt-4 lg:mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto">
           <h2 class="text-2xl font-bold mb-4">Productos Similares</h2>
@@ -93,8 +93,14 @@
 
       <form id="formServicio" class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto">
         <h2 class="text-2xl font-bold mb-4">Agregar Servicio</h2>
+        <label for="nombreServicio" class="block mb-2">Nombre:</label>
+        <input type="text" id="nombreServicio" class="border border-black p-2 mb-4 w-full rounded-md b-[2px]" required/>
+
+        <label for="detalleServicio" class="block mb-2">Detalle:</label>
+        <textarea id="detalleServicio" class="border border-black p-2 mb-4 w-full rounded-md" required></textarea>
+
         <label for="restriccionesServicio" class="block mb-2">Restricciones:</label>
-        <textarea id="restriccionesServicio" class="border border-black p-2 mb-4 w-full rounded-md"></textarea>
+        <textarea id="restriccionesServicio" class="border border-black p-2 mb-4 w-full rounded-md" required></textarea>
 
         <div class="mb-4">
           <input type="checkbox" id="precioAviso" name="precioAviso" class="mr-2">
@@ -106,9 +112,9 @@
         </div>
 
         <label for="datosComercio" class="block mt-4">Datos del Comercio:</label>
-        <textarea id="datosComercio" class="border p-2 mb-4 w-full rounded-md border border-black"></textarea>
+        <textarea id="datosComercio" class="border p-2 mb-4 w-full rounded-md border border-black" required></textarea>
 
-        <button type="submit" class="mt-4 bg-secondary text-white p-2 rounded">Guardar Servicio</button>
+        <button id="btnAgregarServicio" type="submit" class="mt-4 bg-secondary text-white p-2 rounded">Agregar Servicio</button>
       </form>
     </main>
 
