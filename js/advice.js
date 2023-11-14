@@ -3,6 +3,9 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     document.getElementById('botonesAccion').style.display = 'flex';
     document.getElementById('formServicio').style.display = 'none';
     document.getElementById('formProducto').style.display = 'none';
+
+    const searchResults = document.getElementById('searchResults');
+    searchResults.style.display = 'none'
   });
 
   document.getElementById('agregarServicio').addEventListener('click', function () {
@@ -121,3 +124,4 @@ document.getElementById('btnAgregarProducto').addEventListener('click', function
       document.getElementById('formProducto').reset();
   }
 });
+
