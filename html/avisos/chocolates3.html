@@ -26,7 +26,6 @@
     </script>
   </head>
   <body class="font-sans bg-gray-100">
-
     <header class="bg-secondary text-white text-[24px] text-center py-4">
       <h1>Detalles del Producto</h1>
     </header>
@@ -42,13 +41,26 @@
         </div>
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-bold mb-4">Tableta de chocolate</h2>
-          <p>Detalle del Producto: 80g de chocolate con 60% cacao y 0% azúcar. Endulzado con maltitol. Libre de gluten. Producto sin TACC. Apto celiacos.</p>
+          <p>
+            Detalle del Producto: 80g de chocolate con 60% cacao y 0% azúcar.
+            Endulzado con maltitol. Libre de gluten. Producto sin TACC. Apto
+            celiacos.
+          </p>
           <p class="mb-2">Categoría: Chocolate</p>
 
-          <div class="mb-4">
+          <div class="mt-4">
             <h3 class="text-xl font-bold">Cambio de Divisa</h3>
-            <p>Precio en USD: $100.00</p>
-            <p>Precio en EUR: €85.00</p>
+            <p class="my-2">Precio en pesos: $<span id="precio">3000</span></p>
+            <div class="relative inline-block">
+              <select
+                id="selectPrecios"
+                class="block w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 my-4"
+              >
+                <option value="dolar">Precio en USD</option>
+                <option value="euro">Precio en Euros</option>
+              </select>
+            </div>
+            <p class="mt-2"><span id="precioDivisa"></span></p>
           </div>
 
           <div>
@@ -64,4 +76,28 @@
       </div>
     </main>
   </body>
+  <script src="./../../js/divisas.js"></script>
+  <script defer>
+    const precioPesosEl = document.getElementById("precio");
+    const precioDivisaEl = document.getElementById("precioDivisa");
+    const selectElement = document.getElementById("selectPrecios");
+    async function actualizarPrecio() {
+      const precioPesos = Number(precioPesosEl.textContent);
+      let signo;
+      let newPrecio;
+      if (selectElement.selectedOptions[0].value === "dolar") {
+        signo = "$";
+        newPrecio = await convertirPesosADolares(precioPesos);
+      } else {
+        signo = "€";
+        newPrecio = await convertirPesosAEuros(precioPesos);
+      }
+      precioDivisaEl.textContent = signo + newPrecio.toFixed(2);
+    }
+    (async () => await actualizarPrecio())();
+    selectElement.addEventListener(
+      "change",
+      async () => await actualizarPrecio()
+    );
+  </script>
 </html>

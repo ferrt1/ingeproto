@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secretaria de Turismo</title>
-    <link rel="icon" href="imgs/icons/icon-page.png" type="image/png">
+    <link rel="icon" href="imgs/icons/icon-page.png" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/6616501bac.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/6616501bac.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       tailwind.config = {
         theme: {
@@ -23,7 +26,9 @@
     </script>
   </head>
   <body class="font-sans bg-gray-100">
-    <header class="bg-secondary text-white text-[24px] text-center py-4 bg-secondary">
+    <header
+      class="bg-secondary text-white text-[24px] text-center py-4 bg-secondary"
+    >
       <h1>Las Brujas Regaleria</h1>
     </header>
 
@@ -45,9 +50,19 @@
           </p>
           <p class="mb-2">Categoría: Mermeladas</p>
 
-          <div class="mb-4">
+          <div class="mt-4">
             <h3 class="text-xl font-bold">Cambio de Divisa</h3>
-            <p>Precio en USD: $100.00</p>
+            <p class="my-2">Precio en pesos: $<span id="precio">2150</span></p>
+            <div class="relative inline-block">
+              <select
+                id="selectPrecios"
+                class="block w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 my-4"
+              >
+                <option value="dolar">Precio en USD</option>
+                <option value="euro">Precio en Euros</option>
+              </select>
+            </div>
+            <p class="mt-2"><span id="precioDivisa"></span></p>
           </div>
 
           <div>
@@ -63,4 +78,28 @@
       </div>
     </main>
   </body>
+  <script src="./../../js/divisas.js"></script>
+  <script defer>
+    const precioPesosEl = document.getElementById("precio");
+    const precioDivisaEl = document.getElementById("precioDivisa");
+    const selectElement = document.getElementById("selectPrecios");
+    async function actualizarPrecio() {
+      const precioPesos = Number(precioPesosEl.textContent);
+      let signo;
+      let newPrecio;
+      if (selectElement.selectedOptions[0].value === "dolar") {
+        signo = "$";
+        newPrecio = await convertirPesosADolares(precioPesos);
+      } else {
+        signo = "€";
+        newPrecio = await convertirPesosAEuros(precioPesos);
+      }
+      precioDivisaEl.textContent = signo + newPrecio.toFixed(2);
+    }
+    (async () => await actualizarPrecio())();
+    selectElement.addEventListener(
+      "change",
+      async () => await actualizarPrecio()
+    );
+  </script>
 </html>
