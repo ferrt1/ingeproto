@@ -30,10 +30,10 @@ async function convertirPesosAEuros(pesos) {
 
 
 // esto seria la forma de llamarlas, un main de ejemplo
-(async () => {
+/* (async () => {
   const precioEnDolares = await convertirPesosADolares(1000);
   const precioEnEuros = await convertirPesosAEuros(1000)
 
   console.log(precioEnDolares);
   console.log(precioEnEuros);
-})()
+})() */

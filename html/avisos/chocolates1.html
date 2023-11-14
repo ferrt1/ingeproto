@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,41 +57,66 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Detalles del Producto</h1>
-</header>
+    <header>
+        <h1>Paradise Chocolates</h1>
+    </header>
 
-<main>
-    <div class="product-details">
-        <div class="product-image">
-            <img src="/imgs/productos/rama.png" alt="Foto del Producto">
-        </div>
-        <div class="product-info">
-            <h2>Chocolate en rama</h2>
-            <p>Detalle del Producto: Barra de chocolate en rama blanco. ¡Simplemente DE - LI - CIO - SO! Presentación: caja de 60g. Libre de gluten. Producto sin TACC. Apto celiacos. Producto kosher.</p>
-            <p>Categoría: Chocolate</p>
-
-            <div class="currency-info">
-                <h3>Cambio de Divisa</h3>
-                <p>Precio en USD: $100.00</p>
-                <p>Precio en EUR: €85.00</p>
+    <main>
+        <div class="product-details">
+            <div class="product-image">
+                <img src="/imgs/productos/rama.png" alt="Foto del Producto">
             </div>
+            <div class="product-info">
+                <h2>Chocolate en rama</h2>
+                <p>Detalle del Producto: Barra de chocolate en rama blanco. ¡Simplemente DE - LI - CIO - SO!
+                    Presentación: caja de 60g. Libre de gluten. Producto sin TACC. Apto celiacos. Producto kosher.</p>
+                <p>Categoría: Chocolate</p>
 
-            <div class="commerce-info">
-                <h3>Datos del Comercio</h3>
-                <p>Paradise chocolates</p>
-                <p>Descripcion Comercio</p>
-                <p>Categoria relacionada</p>
-                <p>Direccion</p>
-                <p>Horarios</p>
-                <p>Telefono</p>
-                
+                <div class="currency-info">
+                    <h3>Cambio de Divisa</h3>
+                    <p>Precio en pesos: $<span id="precio">4500</span></p>
+                    <select id="selectPrecios">
+                        <option value="dolar">Precio en USD</option>
+                        <option value="euro">Precio en euros</option>
+                    </select>
+                    <p><span id="precioDivisa"></span></p>
+                </div>
+
+                <div class="commerce-info">
+                    <h3>Descripcion Comercio</h3>
+                    <p>Categoria relacionada:</p>
+                    <p>Direccion:</p>
+                    <p>Horarios:</p>
+                    <p>Telefono:</p>
+
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 
 </body>
+<script src="./../../js/divisas.js"></script>
+<script defer>
+    const precioPesosEl = document.getElementById('precio');
+    const precioDivisaEl = document.getElementById('precioDivisa');
+    const selectElement = document.getElementById('selectPrecios');
+    async function actualizarPrecio() {
+        const precioPesos = Number(precioPesosEl.textContent)
+        let signo;
+        let newPrecio;
+        if (selectElement.selectedOptions[0].value === 'dolar') {
+            signo = '$';
+            newPrecio = await convertirPesosADolares(precioPesos);
+        } else {
+            signo = '€';
+            newPrecio = await convertirPesosAEuros(precioPesos);
+        }
+        precioDivisaEl.textContent = signo + newPrecio.toFixed(2)
+    }
+    (async () => await actualizarPrecio())()
+    selectElement.addEventListener("change", async () => await actualizarPrecio());
+</script>
 </html>

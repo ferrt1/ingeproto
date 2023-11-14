@@ -42,7 +42,7 @@ async function clickMoreProductsButtonHandler() {
 
 
 // un main de ejemplo
-(async () => {
+/* (async () => {
   await clickSearchButtonHandler('Nintendo Switch');
 
   for (const similarProduct of await clickMoreProductsButtonHandler()) {
@@ -72,4 +72,4 @@ async function clickMoreProductsButtonHandler() {
     console.log(similarProduct.vendedor);
     console.log(similarProduct.precio);
   }
-})()
+})() */
