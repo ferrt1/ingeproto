@@ -1,123 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Secretaria de Turismo</title>
-        <link rel="icon" href="../imgs/icons/icon-page.png" type="image/png" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script
-          src="https://kit.fontawesome.com/6616501bac.js"
-          crossorigin="anonymous"
-        ></script>
-        <link rel="stylesheet" href="dist/css/leaflet-container.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-        <script>
-          tailwind.config = {
-            theme: {
-              extend: {
-                colors: {
-                  primary: "#00759c",
-                  secondary: "#004f69",
-                  semiBlack: "#011627",
-                  lightBlue: "#7dd3fc",
-                },
-              },
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secretaria de Turismo</title>
+    <link rel="icon" href="../imgs/icons/icon-page.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/6616501bac.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="dist/css/leaflet-container.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00759c",
+              secondary: "#004f69",
+              semiBlack: "#011627",
+              lightBlue: "#7dd3fc",
             },
-          };
-        </script>
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-      </head>
-<body>
-    <header class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50">
-        <div class="flex relative font-bold">
-          <a href="/" id="home-link"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-house-fill inline-block " viewBox="0 0 16 16">
-            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
-          </svg> Secretaria de Turismo </a>
-        </div>
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <header
+      class="flex place-content-between md:items-center text-[17px] bg-white text-primary p-4 mb-5 top-0 sticky z-50"
+    >
+      <div class="flex relative font-bold">
+        <a href="/" id="home-link"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            fill="currentColor"
+            class="bi bi-house-fill inline-block"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+            />
+            <path
+              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+            />
+          </svg>
+          Secretaria de Turismo
+        </a>
+      </div>
     </header>
     <main>
-      <h1 class="text-center text-[36px] mt-12 leading-none text-secondary font-bold">Bienvenido a la vista de comerciante</h1>
-      <h2 class="text-center text-[28px] mt-6 leading-none text-secondary font-bold">Aquí podrás administrar tus avisos</h2>
-      <div id="agregarAvisos" class="flex flex-col md:p-8 p-2 my-20 bg-white items-center">
-          <div class="border text-secondary text-[21px] border-gray-950 rounded-xl w-[300px] md:w-[450px] p-24 hover:cursor-pointer hover:bg-secondary hover:text-white">
-            <h4 class="text-center font-bold">Agregar avisos</h4>
-          </div>
+      <h1
+        class="text-center text-[36px] mt-12 leading-none text-secondary font-bold"
+      >
+        Bienvenido a la vista de comerciante
+      </h1>
+      <h2
+        class="text-center text-[28px] mt-6 leading-none text-secondary font-bold"
+      >
+        Aquí podrás administrar tus avisos
+      </h2>
+      <div
+        id="agregarAvisos"
+        class="flex flex-col md:p-8 p-2 my-20 bg-white items-center"
+      >
+        <div
+          class="border text-secondary text-[21px] border-gray-950 rounded-xl w-[300px] md:w-[450px] p-24 hover:cursor-pointer hover:bg-secondary hover:text-white"
+        >
+          <h4 class="text-center font-bold">Agregar avisos</h4>
+        </div>
       </div>
 
+      <div
+        id="botonesAccion"
+        class="hidden flex flex-row mt-16 justify-center align-center mx-6"
+      >
+        <button
+          id="agregarServicio"
+          class="bg-secondary text-white p-6 rounded mx-5 hover:bg-white hover:text-black hover:border-[2px] hover:border-black"
+        >
+          Agregar Servicio
+        </button>
 
-      <div id="botonesAccion" class="hidden flex flex-row mt-16 justify-center align-center mx-6">
-
-        <button id="agregarServicio" class="bg-secondary text-white p-6  rounded mx-5 hover:bg-white hover:text-black hover:border-[2px] hover:border-black">Agregar Servicio</button>
-
-        <button id="agregarProducto" class="bg-secondary text-white p-6  rounded mx-5 hover:bg-white hover:text-black hover:border-[2px] hover:border-black">Agregar Producto</button>
+        <button
+          id="agregarProducto"
+          class="bg-secondary text-white p-6 rounded mx-5 hover:bg-white hover:text-black hover:border-[2px] hover:border-black"
+        >
+          Agregar Producto
+        </button>
       </div>
 
       <!-- Formulario producto -->
       <div class="flex flex-col lg:flex-row md:gap-12">
-        <form id="formProducto" class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] md:mx-auto">
+        <form
+          id="formProducto"
+          class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] md:mx-auto"
+        >
           <h2 class="text-2xl font-bold mb-4">Agregar Producto</h2>
           <label for="nombreProducto" class="block mb-2">Nombre:</label>
-          <input type="text" id="nombreProducto" class="border border-black p-2 mb-4 w-full rounded-md b-[2px]" required/>
-  
+          <input
+            type="text"
+            id="nombreProducto"
+            class="border border-black p-2 mb-4 w-full rounded-md b-[2px]"
+            required
+          />
+
           <label for="detalleProducto" class="block mb-2">Detalle:</label>
-          <textarea id="detalleProducto" class="border border-black p-2 mb-4 w-full rounded-md" required></textarea>
-  
-          <label for="fotoProducto" class="block text-gray-700 text-sm font-bold mb-2">Foto del Producto:</label>
-      <input type="file" id="fotoProducto" name="fotoProducto" accept="image/*" class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4">
-  
+          <textarea
+            id="detalleProducto"
+            class="border border-black p-2 mb-4 w-full rounded-md"
+            required
+          ></textarea>
+
+          <label
+            for="fotoProducto"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Foto del Producto:</label
+          >
+          <input
+            type="file"
+            id="fotoProducto"
+            name="fotoProducto"
+            accept="image/*"
+            class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+          />
+
           <label for="categoriaProducto" class="block mb-2">Categoría:</label>
-          <input type="text" id="categoriaProducto" class="border border-black p-2 mb-4 w-full rounded-md" required />
-  
+          <input
+            type="text"
+            id="categoriaProducto"
+            class="border border-black p-2 mb-4 w-full rounded-md"
+            required
+          />
+          <label for="restriccionesServicio" class="block mb-2"
+            >Caracteristicas:</label
+          >
+          <textarea
+            id="restriccionesServicio"
+            class="border border-black p-2 mb-4 w-full rounded-md"
+            required
+          ></textarea>
           <div class="mb-4">
-            <input type="checkbox" id="precioProducto" name="precioProducto" class="mr-2">
-            <label for="precioProducto" class="text-gray-700 text-sm">Agregar Precio</label>
+            <input
+              type="checkbox"
+              id="precioProducto"
+              name="precioProducto"
+              class="mr-2"
+            />
+            <label for="precioProducto" class="text-gray-700 text-sm"
+              >Agregar Precio</label
+            >
           </div>
           <div id="campoPrecio" class="mb-4 hidden">
-            <label for="precio" class="block text-gray-700 text-sm font-bold mb-2">Precio del Producto:</label>
-            <input type="text" id="precio" name="precio" class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ingrese el precio del producto">
+            <label
+              for="precio"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Precio del Producto:</label
+            >
+            <input
+              type="text"
+              id="precio"
+              name="precio"
+              class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Ingrese el precio del producto"
+            />
           </div>
-          <button type="button" onclick="searchSimilarProducts()" class="mt-4 bg-secondary text-white p-2 rounded block">Consultar precios similares</button>
-          <button id="btnAgregarProducto" type="submit" class="mt-4 bg-secondary text-white p-2 rounded block">Agregar Producto</button>
+          <button
+            type="button"
+            onclick="searchSimilarProducts()"
+            class="mt-4 bg-secondary text-white p-2 rounded block"
+          >
+            Consultar precios similares
+          </button>
+          <button
+            id="btnAgregarProducto"
+            type="submit"
+            class="mt-4 bg-secondary text-white p-2 rounded block"
+          >
+            Agregar Producto
+          </button>
         </form>
-        <div id="searchResults" class="hidden mt-4 lg:mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto">
+        <div
+          id="searchResults"
+          class="hidden mt-4 lg:mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto"
+        >
           <h2 class="text-2xl font-bold mb-4">Productos Similares</h2>
           <div id="searchResultsContainer"></div>
         </div>
       </div>
 
-
       <!-- Formulario para Servicio -->
 
-
-      <form id="formServicio" class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto">
+      <form
+        id="formServicio"
+        class="hidden mt-8 bg-white p-8 rounded-md md:w-[50%] md:w-[400px] mx-auto"
+      >
         <h2 class="text-2xl font-bold mb-4">Agregar Servicio</h2>
         <label for="nombreServicio" class="block mb-2">Nombre:</label>
-        <input type="text" id="nombreServicio" class="border border-black p-2 mb-4 w-full rounded-md b-[2px]" required/>
+        <input
+          type="text"
+          id="nombreServicio"
+          class="border border-black p-2 mb-4 w-full rounded-md b-[2px]"
+          required
+        />
 
         <label for="detalleServicio" class="block mb-2">Detalle:</label>
-        <textarea id="detalleServicio" class="border border-black p-2 mb-4 w-full rounded-md" required></textarea>
+        <textarea
+          id="detalleServicio"
+          class="border border-black p-2 mb-4 w-full rounded-md"
+          required
+        ></textarea>
 
-        <label for="restriccionesServicio" class="block mb-2">Restricciones:</label>
-        <textarea id="restriccionesServicio" class="border border-black p-2 mb-4 w-full rounded-md" required></textarea>
+        <label
+          for="fotoProducto"
+          class="block text-gray-700 text-sm font-bold mb-2"
+          >Foto del Producto:</label
+        >
+        <input
+          type="file"
+          id="fotoProducto"
+          name="fotoProducto"
+          accept="image/*"
+          class="shadow border border-black appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+        />
+        <label for="categoriaProducto" class="block mb-2">Categoría:</label>
+        <input
+          type="text"
+          id="categoriaProducto"
+          class="border border-black p-2 mb-4 w-full rounded-md"
+          required
+        />
+        <label for="restriccionesServicio" class="block mb-2"
+          >Restricciones:</label
+        >
+        <textarea
+          id="restriccionesServicio"
+          class="border border-black p-2 mb-4 w-full rounded-md"
+          required
+        ></textarea>
 
         <div class="mb-4">
-          <input type="checkbox" id="precioAviso" name="precioAviso" class="mr-2">
-          <label for="precioAviso" class="text-gray-700 text-sm">Agregar Precio</label>
+          <input
+            type="checkbox"
+            id="precioAviso"
+            name="precioAviso"
+            class="mr-2"
+          />
+          <label for="precioAviso" class="text-gray-700 text-sm"
+            >Agregar Precio</label
+          >
         </div>
         <div id="campoPrecioAviso" class="mb-4 hidden">
-          <label for="precioAviso" class="block text-gray-700 text-sm font-bold mb-2">Precio del Aviso:</label>
-          <input type="text" id="precioAviso" name="precioAviso" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border border-black" placeholder="Ingrese el precio del aviso">
+          <label
+            for="precioAviso"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Precio del Aviso:</label
+          >
+          <input
+            type="text"
+            id="precioAviso"
+            name="precioAviso"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border border-black"
+            placeholder="Ingrese el precio del aviso"
+          />
         </div>
 
-        <label for="datosComercio" class="block mt-4">Datos del Comercio:</label>
-        <textarea id="datosComercio" class="border p-2 mb-4 w-full rounded-md border border-black" required></textarea>
-
-        <button id="btnAgregarServicio" type="submit" class="mt-4 bg-secondary text-white p-2 rounded">Agregar Servicio</button>
+        <button
+          id="btnAgregarServicio"
+          type="submit"
+          class="mt-4 bg-secondary text-white p-2 rounded"
+        >
+          Agregar Servicio
+        </button>
       </form>
     </main>
 
     <script src="../js/advice.js"></script>
-</body>
+  </body>
 </html>
