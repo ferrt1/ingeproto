@@ -14,7 +14,7 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     checkboxPrecioAviso.addEventListener('change', function () {
       campoPrecioAviso.classList.toggle('hidden', !checkboxPrecioAviso.checked);
     });
-    document.getElementById('searchResults').style.display = 'none';
+    document.getElementById('searchResults').classList.add('hidden');
   });
 
   document.getElementById('agregarProducto').addEventListener('click', function () {
@@ -23,11 +23,12 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
 
       const checkboxPrecio = document.getElementById('precioProducto');
   const campoPrecio = document.getElementById('campoPrecio');
-
+    
   checkboxPrecio.addEventListener('change', function () {
     campoPrecio.classList.toggle('hidden', !checkboxPrecio.checked);
   });
   });
+
   
 // PRECIOS SIMILARES
 
@@ -96,13 +97,15 @@ document.getElementById('btnAgregarServicio').addEventListener('click', function
   const precioAvisoCheckbox = document.getElementById('precioAviso');
   const precioAvisoInput = document.getElementById('precioAviso');
 
-  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || fotoServicio === ''|| categoriaServicio === '') {
-      alert('Por favor, complete todos los campos.');
+  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || fotoServicio === '' || categoriaServicio === '') {
+    alert('Por favor, complete todos los campos.');
   } else if (precioAvisoCheckbox.checked && precioAvisoInput.value.trim() === '') {
-      alert('Por favor, complete el campo de precio del aviso.');
+    alert('Por favor, complete el campo de precio del aviso.');
+  } else if (precioAvisoCheckbox.checked && parseFloat(precioAvisoInput.value.trim()) < 0) {
+    alert('El precio del servicio debe ser positivo.');
   } else {
-      alert('Servicio guardado con éxito.');
-      document.getElementById('formServicio').reset();
+    alert('Servicio guardado con éxito.');
+    document.getElementById('formServicio').reset();
   }
 });
 
@@ -115,11 +118,16 @@ document.getElementById('btnAgregarProducto').addEventListener('click', function
   const precioProductoCheckbox = document.getElementById('precioProducto');
   const precioProductoInput = document.getElementById('precio');
 
+  document.getElementById('searchResults').classList.add('hidden');
+  
   if (nombreProducto === '' || detalleProducto === '' || fotoProducto === '' || categoriaProducto === '' || caracteristicaProducto==='') {
       alert('Por favor, complete todos los campos.');
   } else if (precioProductoCheckbox.checked && precioProductoInput.value.trim() === '') {
       alert('Por favor, complete el campo de precio del producto.');
-  } else {
+  } else if(precioProductoCheckbox.checked && parseFloat(precioProductoInput.value.trim()) < 0){
+    alert('El precio del producto debe ser positivo.');
+  }
+  else {
       alert('Producto guardado con éxito.');
       document.getElementById('formProducto').reset();
   }
