@@ -94,7 +94,7 @@ document.getElementById('btnAgregarServicio').addEventListener('click', function
   const precioAvisoCheckbox = document.getElementById('precioAviso');
   const precioAvisoInput = document.getElementById('precioAviso');
 
-  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || datosComercio === ''|| fotoServicio === ''||categoriaPServicio==='') {
+  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || datosComercio === ''|| fotoServicio === ''|| categoriaPServicio === '') {
       alert('Por favor, complete todos los campos.');
   } else if (precioAvisoCheckbox.checked && precioAvisoInput.value.trim() === '') {
       alert('Por favor, complete el campo de precio del aviso.');
