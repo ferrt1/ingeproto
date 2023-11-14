@@ -2,10 +2,7 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     document.getElementById('agregarAvisos').style.display = 'none';
     document.getElementById('botonesAccion').style.display = 'flex';
     document.getElementById('formServicio').style.display = 'none';
-    document.getElementById('formProducto').style.display = 'none';
 
-    const searchResults = document.getElementById('searchResults');
-    searchResults.style.display = 'none'
   });
 
   document.getElementById('agregarServicio').addEventListener('click', function () {
@@ -17,6 +14,7 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     checkboxPrecioAviso.addEventListener('change', function () {
       campoPrecioAviso.classList.toggle('hidden', !checkboxPrecioAviso.checked);
     });
+    document.getElementById('searchResults').style.display = 'none';
   });
 
   document.getElementById('agregarProducto').addEventListener('click', function () {
@@ -82,6 +80,8 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
     });
     document.getElementById('searchResults').classList.remove('hidden');
   }
+
+
 
 
 // Alerta agregar
