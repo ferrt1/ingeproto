@@ -87,36 +87,37 @@ document.getElementById('agregarAvisos').addEventListener('click', function () {
 document.getElementById('btnAgregarServicio').addEventListener('click', function () {
   const nombreServicio = document.getElementById('nombreServicio').value.trim();
   const detalleServicio = document.getElementById('detalleServicio').value.trim();
-  const fotoServicio = document.getElementById('fotoServicio').value.trim(); // Modificado para el campo de imagen
-  const categoriaPServicio = document.getElementById('categoriaPServicio').value.trim();
+  const fotoServicio = document.getElementById('fotoServicio').value.trim();
+  const categoriaServicio = document.getElementById('categoriaServicio').value.trim();
   const restriccionesServicio = document.getElementById('restriccionesServicio').value.trim();
-  const datosComercio = document.getElementById('datosComercio').value.trim();
   const precioAvisoCheckbox = document.getElementById('precioAviso');
   const precioAvisoInput = document.getElementById('precioAviso');
 
-  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || datosComercio === ''|| fotoServicio === ''|| categoriaPServicio === '') {
+  if (nombreServicio === '' || detalleServicio === '' || restriccionesServicio === '' || fotoServicio === ''|| categoriaServicio === '') {
       alert('Por favor, complete todos los campos.');
   } else if (precioAvisoCheckbox.checked && precioAvisoInput.value.trim() === '') {
       alert('Por favor, complete el campo de precio del aviso.');
   } else {
       alert('Servicio guardado con éxito.');
+      document.getElementById('formServicio').reset();
   }
 });
 
 document.getElementById('btnAgregarProducto').addEventListener('click', function () {
   const nombreProducto = document.getElementById('nombreProducto').value.trim();
   const detalleProducto = document.getElementById('detalleProducto').value.trim();
-  const fotoProducto = document.getElementById('fotoProducto').value.trim(); // Modificado para el campo de imagen
+  const fotoProducto = document.getElementById('fotoProducto').value.trim(); 
   const categoriaProducto = document.getElementById('categoriaProducto').value.trim();
   const caracteristicaProducto = document.getElementById('caracteristicaProducto').value.trim();
   const precioProductoCheckbox = document.getElementById('precioProducto');
   const precioProductoInput = document.getElementById('precio');
 
-  if (nombreProducto === '' || detalleProducto === '' || fotoProducto === '' || categoriaProducto === ''||caracteristicaProducto==='') {
+  if (nombreProducto === '' || detalleProducto === '' || fotoProducto === '' || categoriaProducto === '' || caracteristicaProducto==='') {
       alert('Por favor, complete todos los campos.');
   } else if (precioProductoCheckbox.checked && precioProductoInput.value.trim() === '') {
       alert('Por favor, complete el campo de precio del producto.');
   } else {
       alert('Producto guardado con éxito.');
+      document.getElementById('formProducto').reset();
   }
 });
