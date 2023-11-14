@@ -1,95 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
 
-      header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1em;
-      }
+<body class="font-sans bg-gray-100">
+  <header class="bg-secondary text-white text-[24px] text-center py-4 bg-secondary">
+    <h1>Recuerdos Juancito</h1>
+  </header>
+    <main class="max-w-4xl mx-auto p-4">
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 mb-4 md:mb-0 p-4">
+                <img src="/imgs/productos/imanes.jpg" alt="Foto del Producto" class="w-full rounded border border-gray-300">
+            </div>
+            <div class="w-full md:w-1/2 p-4">
+                <h2 class="text-2xl font-bold mb-4">Imanes</h2>
+                <p class="mb-4">
+                    En nuestro encantador local, nos especializamos en brindar una
+                    experiencia única al ofrecer imanes memorables. Desde imanes que
+                    capturan la majestuosidad de los paisajes locales hasta aquellos que
+                    reflejan la rica cultura de la región, cada pieza cuenta una
+                    historia especial.
+                </p>
+                <p class="mb-2">Categoría: Recuerdos</p>
 
-      main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
+                <div class="mt-4">
+                    <h3 class="text-xl font-bold">Cambio de Divisa</h3>
+                    <p>Precio en USD: $100.00</p>
+                </div>
 
-      .product-details {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .product-image {
-        flex: 1;
-        margin-right: 20px;
-      }
-
-      .product-image img {
-        max-width: 100%;
-        height: auto;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 5px;
-      }
-
-      .product-info {
-        flex: 1;
-      }
-
-      .currency-info {
-        margin-top: 20px;
-      }
-
-      .commerce-info {
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Recuerdos Juancito</h1>
-    </header>
-
-    <main>
-      <div class="product-details">
-        <div class="product-image">
-          <img src="/imgs/productos/imanes.jpg" alt="Foto del Producto" />
+                <div class="mt-4">
+                    <h3 class="text-xl font-bold">Detalles</h3>
+                    <p>Direccion:Mitre 340, San Carlos de Bariloche, Río Negro</p>
+                    <p>Horarios:Lunes a Viernes, 9:00 - 21:30</p>
+                    <p>Telefono:+0294 442 6119</p>
+                </div>
+            </div>
         </div>
-        <div class="product-info">
-          <h2>Imanes</h2>
-          <p>
-            En nuestro encantador local, nos especializamos en brindar una
-            experiencia única al ofrecer imanes memorables. Desde imanes que
-            capturan la majestuosidad de los paisajes locales hasta aquellos que
-            reflejan la rica cultura de la región, cada pieza cuenta una
-            historia especial.
-          </p>
-          <p>Categoría: Recuerdos</p>
-
-          <div class="currency-info">
-            <h3>Cambio de Divisa</h3>
-            <p>Precio en USD: $100.00</p>
-          </div>
-
-          <div class="commerce-info">
-            <h3>Detalles</h3>
-            <p>Direccion:Mitre 340, San Carlos de Bariloche, Río Negro</p>
-            <p>Horarios:Lunes a Viernes, 9:00 - 21:30</p>
-            <p>Telefono:+0294 442 6119</p>
-          </div>
-        </div>
-      </div>
     </main>
-  </body>
+</body>
+
 </html>

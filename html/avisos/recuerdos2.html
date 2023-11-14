@@ -3,91 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalles del Producto</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1em;
-      }
-
-      main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .product-details {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .product-image {
-        flex: 1;
-        margin-right: 20px;
-      }
-
-      .product-image img {
-        max-width: 100%;
-        height: auto;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 5px;
-      }
-
-      .product-info {
-        flex: 1;
-      }
-
-      .currency-info {
-        margin-top: 20px;
-      }
-
-      .commerce-info {
-        margin-top: 20px;
-      }
-    </style>
+    <title>Secretaria de Turismo</title>
+    <link rel="icon" href="imgs/icons/icon-page.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/6616501bac.js" crossorigin="anonymous"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00759c",
+              secondary: "#004f69",
+              semiBlack: "#011627",
+              lightBlue: "#7dd3fc",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <header>
+  <body class="font-sans bg-gray-100">
+    <header class="bg-secondary text-white text-[24px] text-center py-4 bg-secondary">
       <h1>Las Brujas Regaleria</h1>
     </header>
 
-    <main>
-      <div class="product-details">
-        <div class="product-image">
-          <img src="/imgs/productos/mermeleda.jpg" alt="Foto del Producto" />
+    <main class="max-w-4xl mx-auto p-4">
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 mb-4 md:mb-0 p-4">
+          <img
+            src="/imgs/productos/mermeleda.jpg"
+            alt="Foto del Producto"
+            class="w-full rounded border border-gray-300"
+          />
         </div>
-        <div class="product-info">
-          <h2>Mermeleda</h2>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-2xl font-bold mb-4">Mermeleda</h2>
           <p>
             Disfrutá de la experiencia de comer una mermelada 100% natural y sin
             conservantes. Elaboradas con frutas frescas y sin conservantes
             artificiales.
           </p>
-          <p>Categoría: Mermeladas</p>
+          <p class="mb-2">Categoría: Mermeladas</p>
 
-          <div class="currency-info">
-            <h3>Cambio de Divisa</h3>
+          <div class="mb-4">
+            <h3 class="text-xl font-bold">Cambio de Divisa</h3>
             <p>Precio en USD: $100.00</p>
           </div>
 
-          <div class="commerce-info">
-            <h3>Detalles</h3>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Detalles</h3>
             <p>
-              Direccion:San Martín 127 Local 11, R8400 San Carlos de Bariloche,
+              Dirección: San Martín 127 Local 11, R8400 San Carlos de Bariloche,
               Río Negro
             </p>
-            <p>Horarios:Lunes a Viernes, 9:00 - 20:00</p>
-            <p>Telefono:+0294 451-0497</p>
+            <p>Horarios: Lunes a Viernes, 9:00 - 20:00</p>
+            <p>Teléfono: +0294 451-0497</p>
           </div>
         </div>
       </div>
